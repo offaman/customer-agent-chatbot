@@ -1,0 +1,45 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Agent Sign In",
+            "wrap": true,
+            "size": "Large"
+        },
+        {
+            "type": "Input.Text",
+            "label": "Agent Email",
+            "id": "agentEmail",
+            "isRequired": true,
+            "errorMessage": "Agent Email is required"
+        },
+        {
+            "type": "Input.Text",
+            "label": "Password",
+            "id": "agentPassword",
+            "isRequired": true,
+            "errorMessage": "Agent Password is required"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Submit",
+            "associatedInputs": "auto",
+            "data": {
+                "eventType": "isAgentEvent"
+            }
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Click if you are a customer",
+            "associatedInputs": "None",
+            "data": {
+                "eventType": "isCustomerEvent"
+            }
+        }
+    ]
+}
